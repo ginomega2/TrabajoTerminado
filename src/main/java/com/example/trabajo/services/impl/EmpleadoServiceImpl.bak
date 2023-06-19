@@ -1,0 +1,39 @@
+package com.example.trabajo.services.impl;
+
+import com.example.trabajo.models.Empleado;
+import com.example.trabajo.repos.EmpleadoRepository;
+import com.example.trabajo.services.EmpleadoService;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.List;
+import java.util.Optional;
+
+//public class EmpleadoServiceImpl implements EmpleadoService {
+//    @Autowired
+//    EmpleadoRepository repository;
+//
+//    @Override
+//    public List<Empleado> findAllEmpleados() {
+//        return repository.findAll();
+//    }
+//
+//    @Override
+//    public Empleado createEmpleado(Empleado empleado) {
+//        return repository.save(empleado);
+//    }
+//
+//    @Override
+//    public void updateEmpleado(Empleado empleado) {
+//        repository.save(empleado);
+//    }
+//
+//    @Override
+//    public void deleteEmpleado(Long id) {
+//        repository.deleteById(id);
+//    }
+//
+//    @Override
+//    public Optional<Empleado> findEmpleadoById(Long id) {
+//        return repository.findById(id);
+//    }
+//}
