@@ -21,12 +21,13 @@ public class EmpleadoController {
     @Autowired
     EmpleadoRepository repository;
 
+
     @RequestMapping("showCreate")
     public String showCreate() {
         return "createEmpleado";
     }
 
-    @RequestMapping("/displayEmpleados")          //**********             http://localhost:8067/mvc/displayEmpleados
+    @RequestMapping("/displayEmpleados")          //**********             http://localhost:8067/mvc/displayEmpleados    GET
     public String displayEmpleados(ModelMap modelMap) {
         List<Empleado> empleados = service.findAllEmpleados();
         modelMap.addAttribute("empleados", empleados);
@@ -43,8 +44,6 @@ public class EmpleadoController {
 
     @RequestMapping("deleteEmpleado")
     public String deleteLocation(@RequestParam("id") long id, ModelMap modelMap) {
-        Empleado empleado = new Empleado();
-        empleado.setId(id);
         service.deleteEmpleado(id);
         List<Empleado> empleados = service.findAllEmpleados();
         modelMap.addAttribute("empleados", empleados);
