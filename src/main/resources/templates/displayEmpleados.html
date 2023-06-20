@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Insert title here</title>
+</head>
+<body>
+
+<h2>Locations:</h2>
+<table>
+    <tr>
+        <th>id</th>
+        <th>nombre</th>
+        <th>diaTrabajados</th>
+        <th>sueldoXdia</th>
+        <th>sueldoBruto</th>
+        <th>sueldoNeto</th>
+    </tr>
+
+    <tr th:each="empleado:${empleados}">
+        <td th:text="${empleado.id}"></td>
+        <td th:text="${empleado.nombre}"></td>
+        <td th:text="${empleado.diaTrabajados}"></td>
+        <td th:text="${empleado.sueldoXdia}"></td>
+        <td th:text="${empleado.sueldoBruto}"></td>
+        <td th:text="${empleado.sueldoNeto}"></td>
+
+        <td><a th:href="@{'deleteEmpleado?id='+${empleado.id}}">delete</a></td>
+        <td><a th:href="@{'showUpdate?id='+${empleado.id}}">edit</a></td>
+    </tr>
+    </c:forEach>
+</table>
+<a href="showCreate">Add Empleado</a>
+</body>
+</html>

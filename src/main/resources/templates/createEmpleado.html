@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Create Empleado</title>
+</head>
+<body>
+
+<form action="saveEmp" method="post">
+<pre>
+<!--Id: <input type="text" name="id" readonly/>-->
+nombre: <input type="text" name="nombre"/>
+sueldoXdia: <input type="text" name="sueldoXdia"/>
+diaTrabajados:<input type="text" name="diaTrabajados"/>
+<!--    sueldoBruto:<input type="text" name="sueldoBruto"/>-->
+<!--  sueldoNeto<input type="text" name="sueldoNeto"/>-->
+
+<input type="submit" value="save"/>
+</pre>
+</form>
+<b th:text="${msg}"></b>
+
+<a href="displayEmpleados">View All</a>
+
+</body>
+</html>

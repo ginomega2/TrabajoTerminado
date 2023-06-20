@@ -1,5 +1,8 @@
 package com.example.trabajo.models;
 
+import com.example.trabajo.services.CalculadoraImpuestoImpl;
+import org.springframework.boot.convert.Delimiter;
+
 import javax.persistence.*;
 
 @Entity
@@ -11,8 +14,10 @@ public class Empleado {
     private String nombre;
     private double sueldoXdia;
     private int diaTrabajados;
+    
     private double sueldoBruto;
     private double sueldoNeto;
+
 
     public Empleado(long id, String nombre, double sueldoXdia, int diaTrabajados, double sueldoBruto, double sueldoNeto) {
         this.id = id;
