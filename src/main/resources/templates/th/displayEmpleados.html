@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Insert title here</title>
+
+</head>
+<body>
+
+<!--*********************     TABLA CON DATOS      *********************************-->
+<h2>Lista de empleados:</h2>
+<table class="table table-striped">
+    <thead class="thead-dark">
+    <tr>
+        <th>id</th>
+        <th>nombre</th>
+        <th>diaTrabajados</th>
+        <th>sueldoXdia</th>
+        <th>sueldoBruto</th>
+        <th>sueldoNeto</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="empleado:${empleados}">
+        <td th:text="${empleado.id}"></td>
+        <td th:text="${empleado.nombre}"></td>
+        <td th:text="${empleado.diaTrabajados}"></td>
+        <td th:text="${empleado.sueldoXdia}"></td>
+        <td th:text="${empleado.sueldoBruto}"></td>
+        <td th:text="${empleado.sueldoNeto}"></td>
+
+
+
+        <td>
+            <a  th:href="@{/th/edit/{id} (id=${empleado.id}) }">
+                <i class="fas fa-solid fa-edit">Edit</i>
+            </a>
+        </td>
+        <td>
+            <a  th:href="@{/th/delete/{id} (id=${empleado.id}) }">
+                <i class="fas fa-solid fa-trash">Delete</i>
+            </a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<a href="/th/">Add Empleado</a>
+
+
+
+
+</body>
+</html>
